@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kwikezee Renovations | Partner Renovasi Rumah Tanpa Pening Kepala</title>
+  <meta name="description" content="Kami membantu anda mendapatkan kontraktor yang sesuai, membandingkan sebut harga (quotation), dan menguruskan projek renovasi rumah anda dari awal hingga siap. Konsultasi percuma!">
+  
+  <!-- SEO Open Graph -->
+  <meta property="og:title" content="Kwikezee Renovations | Partner Renovasi Rumah Tanpa Pening Kepala">
+  <meta property="og:description" content="Platform rundingan & pengurusan projek renovasi. Kami padankan anda dengan kontraktor panel terbaik & urus projek dari A-Z.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&h=630&q=80">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            'luxury-beige': {
+              50: '#FDFBF7',
+              100: '#F6F3EB',
+              200: '#ECE6D9',
+              300: '#DDD2BD',
+              400: '#C5A880',
+              500: '#B29166',
+              600: '#94754E',
+              700: '#715839',
+              800: '#4F3D27',
+              900: '#2A2014',
+            },
+            'luxury-charcoal': {
+              50: '#F5F5F5',
+              900: '#1C1917',
+              950: '#131110',
+            },
+            'whatsapp-green': '#25D366'
+          },
+          boxShadow: {
+            'luxury': '0 10px 40px -10px rgba(42, 32, 20, 0.06)',
+            'luxury-hover': '0 20px 50px -10px rgba(42, 32, 20, 0.12)',
+            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+
+    /* Custom preloader anims */
+    @keyframes scaleX {
+      0% { transform: scaleX(0); transform-origin: left; }
+      50% { transform: scaleX(1); transform-origin: left; }
+      50.1% { transform-origin: right; }
+      100% { transform: scaleX(0); transform-origin: right; }
+    }
+    .animate-scale-x {
+      animation: scaleX 2s infinite ease-in-out;
+    }
+
+    /* Premium scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FDFBF7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A880;
+      border-radius: 0px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B29166;
+    }
+    
+    /* Scroll Reveal System */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    .reveal.reveal-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered Delays */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+    .delay-500 { transition-delay: 500ms; }
+    
+    /* Input range reset for Before/After Slider */
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 40px;
+      height: 40px;
+      cursor: ew-resize;
+      background: transparent;
+    }
+  </style>
+</head>
+<body 
+  x-data="{ 
+    mobileMenuOpen: false, 
+    activeFaq: null, 
+    lightboxOpen: false, 
+    lightboxImages: [],
+    lightboxActiveIndex: 0,
+    lightboxTitle: '',
+    lightboxCategory: '',
+    portfolioFilter: 'all',
+    openLightbox(imgs, title, cat) {
+      if (Array.isArray(imgs)) {
+        this.lightboxImages = imgs;
+      } else {
+        this.lightboxImages = [imgs];
+      }
+      this.lightboxActiveIndex = 0;
+      this.lightboxTitle = title;
+      this.lightboxCategory = cat;
+      this.lightboxOpen = true;
+      document.body.style.overflow = 'hidden';
+    },
+    closeLightbox() {
+      this.lightboxOpen = false;
+      document.body.style.overflow = 'auto';
+    }
+  }" 
+  class="bg-luxury-beige-50 text-luxury-charcoal-900 font-sans antialiased overflow-x-hidden"
+>
+
+  <!-- PRELOADER TRANSITION -->
+  <div id="preloader" class="fixed inset-0 bg-luxury-charcoal-950 z-[9999] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
+    <div class="relative flex flex-col items-center">
+      <span class="font-serif text-3xl sm:text-4xl font-bold tracking-widest text-white">
+        K<span class="text-luxury-beige-400">.</span>R
+      </span>
+      <div class="w-24 h-[1px] bg-luxury-beige-400 mt-4 overflow-hidden relative">
+        <div class="absolute inset-0 bg-white animate-scale-x"></div>
+      </div>
+      <span class="text-[9px] uppercase tracking-widest text-stone-500 font-light mt-3">Kwikezee Renovations</span>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-lg bg-luxury-beige-50/70 border-b border-luxury-beige-200/50 shadow-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo (Stacked cleanly with balanced line heights) -->
+        <a href="#" class="flex flex-col justify-center shrink-0 select-none">
+          <span class="font-serif text-2xl font-bold tracking-wide leading-none text-luxury-charcoal-900">
+            Kwikezee<span class="text-luxury-beige-400">.</span>
+          </span>
+          <span class="text-[9px] uppercase tracking-[0.25em] font-sans font-bold text-luxury-beige-500 leading-none mt-1">
+            Renovations
+          </span>
+        </a>
+
+        <!-- Desktop Menu (Responsive fonts and letter spacings to prevent line wrapping) -->
+        <nav class="hidden md:flex items-center space-x-3 lg:space-x-5 xl:space-x-7 text-[10px] lg:text-[11px] font-bold uppercase tracking-wider lg:tracking-widest">
+          <a href="#problem" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">Cabaran</a>
+          <a href="#solusi" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">Servis</a>
+          <a href="#before-after" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">Sebelum/Selepas</a>
+          <a href="#how-it-works" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">Langkah</a>
+          <a href="#perkhidmatan" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">Kategori</a>
+          <a href="#portfolio" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">Portfolio</a>
+          <a href="#faq" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300">FAQ</a>
+        </nav>
+
+        <!-- CTAs (Responsive padding and spacing to fit smaller screens elegantly) -->
+        <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
+          <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." target="_blank" class="text-[10px] xl:text-xs font-bold uppercase tracking-widest text-luxury-charcoal-900 hover:text-luxury-beige-500 transition-colors duration-300 shrink-0">
+            Hubungi Kami
+          </a>
+          <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma%20dan%20semak%20kontraktor." target="_blank" class="px-4 py-2.5 xl:px-6 xl:py-3 bg-luxury-charcoal-900 text-luxury-beige-100 hover:bg-luxury-beige-400 hover:text-luxury-charcoal-900 transition-all duration-300 text-[10px] xl:text-xs font-bold uppercase tracking-wider rounded-none shadow-md shrink-0">
+            Dapatkan Konsultasi Percuma
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-luxury-charcoal-900 hover:text-luxury-beige-500 focus:outline-none p-2" aria-label="Toggle Menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div 
+      x-show="mobileMenuOpen" 
+      x-transition:enter="transition ease-out duration-200" 
+      x-transition:enter-start="opacity-0 -translate-y-4" 
+      x-transition:enter-end="opacity-100 translate-y-0" 
+      x-transition:leave="transition ease-in duration-150" 
+      x-transition:leave-start="opacity-100 translate-y-0" 
+      x-transition:leave-end="opacity-0 -translate-y-4" 
+      class="md:hidden bg-luxury-beige-100 border-b border-luxury-beige-200"
+      x-cloak
+    >
+      <div class="px-4 pt-2 pb-6 space-y-3">
+        <a @click="mobileMenuOpen = false" href="#problem" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Cabaran Renovasi</a>
+        <a @click="mobileMenuOpen = false" href="#solusi" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Peranan Kami</a>
+        <a @click="mobileMenuOpen = false" href="#before-after" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Sebelum/Selepas</a>
+        <a @click="mobileMenuOpen = false" href="#how-it-works" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Langkah Pengurusan</a>
+        <a @click="mobileMenuOpen = false" href="#perkhidmatan" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Perkhidmatan</a>
+        <a @click="mobileMenuOpen = false" href="#portfolio" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Portfolio</a>
+        <a @click="mobileMenuOpen = false" href="#faq" class="block px-3 py-2 text-base font-medium text-luxury-charcoal-900 hover:bg-luxury-beige-200">Soalan Lazim</a>
+        
+        <div class="pt-4 border-t border-luxury-beige-300 flex flex-col space-y-2">
+          <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." target="_blank" class="w-full text-center py-3 bg-whatsapp-green text-white font-semibold flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-lg"></i> WhatsApp Sekarang
+          </a>
+          <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." target="_blank" class="w-full text-center py-3 bg-luxury-charcoal-900 text-luxury-beige-100 font-semibold uppercase tracking-wider text-xs">
+            Dapatkan Konsultasi Percuma
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH PARALLAX -->
+  <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-luxury-charcoal-950">
+    <!-- Background Image container for parallax -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80" alt="Luxury home renovation interior" class="hero-parallax w-full h-[120%] object-cover object-center opacity-40 absolute top-0 left-0 transition-transform duration-100 ease-out">
+      <div class="absolute inset-0 bg-gradient-to-t from-luxury-charcoal-950 via-luxury-charcoal-950/70 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-luxury-charcoal-950/90 via-luxury-charcoal-950/40 to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col items-start justify-center h-full">
+      <!-- Tagline / Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 text-luxury-beige-300 text-xs font-semibold tracking-widest uppercase mb-8 rounded-none">
+        <i class="fa-solid fa-shield-halved text-luxury-beige-400"></i> Rakan Rundingan & Pengurusan Renovasi
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tight text-white max-w-4xl leading-[1.1] mb-6">
+        Renovasi Rumah <br><span class="text-luxury-beige-400">Tanpa Pening Kepala</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-lg sm:text-xl text-stone-300 max-w-2xl font-light leading-relaxed mb-12">
+        Kami membantu anda mendapatkan kontraktor yang sesuai, membandingkan sebut harga dan mengurus projek renovasi dari awal hingga siap.
+      </p>
+
+      <!-- CTA Action Area -->
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-16">
+        <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-whatsapp-green hover:bg-emerald-500 text-white font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl rounded-none group">
+          <i class="fab fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+          <span>WhatsApp Sekarang</span>
+        </a>
+        <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20ingin%20konsultasi%20renovasi%20percuma." target="_blank" class="flex items-center justify-center px-8 py-4 border border-luxury-beige-400/60 hover:border-luxury-beige-400 text-luxury-beige-300 hover:text-white bg-white/5 hover:bg-white/10 transition-all duration-300 rounded-none text-sm font-semibold tracking-wider uppercase">
+          Dapatkan Konsultasi Percuma
+        </a>
+      </div>
+
+      <!-- Trust Indicators Grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-10 border-t border-white/10 w-full">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-luxury-beige-400/10 flex items-center justify-center border border-luxury-beige-400/20 text-luxury-beige-400">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-stone-400 font-semibold">100% Telus</p>
+            <p class="text-sm font-medium text-white">Sebut Harga Jelas</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-luxury-beige-400/10 flex items-center justify-center border border-luxury-beige-400/20 text-luxury-beige-400">
+            <i class="fa-solid fa-users-gear"></i>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-stone-400 font-semibold">Bebas Risiko</p>
+            <p class="text-sm font-medium text-white">Kontraktor Panel Tapis</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-luxury-beige-400/10 flex items-center justify-center border border-luxury-beige-400/20 text-luxury-beige-400">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-stone-400 font-semibold">Pemantauan</p>
+            <p class="text-sm font-medium text-white">Laporan Berkala</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-luxury-beige-400/10 flex items-center justify-center border border-luxury-beige-400/20 text-luxury-beige-400">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-stone-400 font-semibold">Khidmat Nasihat</p>
+            <p class="text-sm font-medium text-white">Sokongan A-to-Z</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative bottom slope -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-luxury-beige-50" style="clip-path: polygon(0 100%, 100% 100%, 100% 0);"></div>
+  </section>
+
+  <!-- PROBLEM SECTION (GLASSMORPHISM CARDS) -->
+  <section id="problem" class="py-24 sm:py-32 bg-luxury-beige-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Cabaran Renovasi Rumah</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+          Masih Mencari Kontraktor Yang Boleh Dipercayai?
+        </h2>
+        <p class="text-stone-600 font-light text-base sm:text-lg">
+          Kami memahami bahawa membina rumah impian selalunya dipenuhi dengan pelbagai kebimbangan dan risiko yang meletihkan mental anda.
+        </p>
+      </div>
+
+      <!-- Pain Points Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:border-luxury-beige-400/60 transition-all duration-500 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between group reveal delay-100">
+          <div>
+            <div class="w-12 h-12 bg-luxury-beige-100/80 text-luxury-beige-600 border border-luxury-beige-300/30 flex items-center justify-center mb-6 group-hover:bg-luxury-charcoal-900 group-hover:text-white group-hover:border-luxury-charcoal-900 transition-all duration-500">
+              <i class="fa-solid fa-handshake-simple-slash text-lg"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-luxury-charcoal-900 mb-3">Susah Cari Kontraktor Berkualiti</h3>
+            <p class="text-stone-500 text-sm font-light leading-relaxed">
+              Banyak kontraktor yang menawarkan khidmat tetapi kualiti kerja sebenar tidak dapat dibuktikan atau tiada rekod yang sah.
+            </p>
+          </div>
+          <div class="mt-8 text-[10px] text-luxury-beige-600/80 font-bold uppercase tracking-widest flex items-center gap-2">
+            <span>Cabaran 01</span> <i class="fa-solid fa-triangle-exclamation text-luxury-beige-400"></i>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:border-luxury-beige-400/60 transition-all duration-500 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between group reveal delay-200">
+          <div>
+            <div class="w-12 h-12 bg-luxury-beige-100/80 text-luxury-beige-600 border border-luxury-beige-300/30 flex items-center justify-center mb-6 group-hover:bg-luxury-charcoal-900 group-hover:text-white group-hover:border-luxury-charcoal-900 transition-all duration-500">
+              <i class="fa-solid fa-eye-slash text-lg"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-luxury-charcoal-900 mb-3">Harga Tidak Telus & Tersembunyi</h3>
+            <p class="text-stone-500 text-sm font-light leading-relaxed">
+              Kos yang sentiasa meningkat di tengah jalan. Harga asal murah, kemudian timbul caj tambahan yang tidak dipersetujui awal.
+            </p>
+          </div>
+          <div class="mt-8 text-[10px] text-luxury-beige-600/80 font-bold uppercase tracking-widest flex items-center gap-2">
+            <span>Cabaran 02</span> <i class="fa-solid fa-triangle-exclamation text-luxury-beige-400"></i>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:border-luxury-beige-400/60 transition-all duration-500 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between group reveal delay-300">
+          <div>
+            <div class="w-12 h-12 bg-luxury-beige-100/80 text-luxury-beige-600 border border-luxury-beige-300/30 flex items-center justify-center mb-6 group-hover:bg-luxury-charcoal-900 group-hover:text-white group-hover:border-luxury-charcoal-900 transition-all duration-500">
+              <i class="fa-solid fa-clipboard-question text-lg"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-luxury-charcoal-900 mb-3">Tak Pasti Hasil Kerja Sebenar</h3>
+            <p class="text-stone-500 text-sm font-light leading-relaxed">
+              Hanya melihat gambar portfolio yang tidak sahih daripada internet, risau rumah sendiri menjadi mangsa eksperimen.
+            </p>
+          </div>
+          <div class="mt-8 text-[10px] text-luxury-beige-600/80 font-bold uppercase tracking-widest flex items-center gap-2">
+            <span>Cabaran 03</span> <i class="fa-solid fa-triangle-exclamation text-luxury-beige-400"></i>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:border-luxury-beige-400/60 transition-all duration-500 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between group reveal delay-400">
+          <div>
+            <div class="w-12 h-12 bg-luxury-beige-100/80 text-luxury-beige-600 border border-luxury-beige-300/30 flex items-center justify-center mb-6 group-hover:bg-luxury-charcoal-900 group-hover:text-white group-hover:border-luxury-charcoal-900 transition-all duration-500">
+              <i class="fa-solid fa-scale-unbalanced text-lg"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-luxury-charcoal-900 mb-3">Buntu Banding Sebut Harga</h3>
+            <p class="text-stone-500 text-sm font-light leading-relaxed">
+              Menerima berbilang quotation format berbeza. Sukar membandingkan item kerja untuk mengetahui harga yang adil dan berbaloi.
+            </p>
+          </div>
+          <div class="mt-8 text-[10px] text-luxury-beige-600/80 font-bold uppercase tracking-widest flex items-center gap-2">
+            <span>Cabaran 04</span> <i class="fa-solid fa-triangle-exclamation text-luxury-beige-400"></i>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:border-luxury-beige-400/60 transition-all duration-500 shadow-luxury hover:shadow-luxury-hover flex flex-col justify-between group reveal delay-500">
+          <div>
+            <div class="w-12 h-12 bg-luxury-beige-100/80 text-luxury-beige-600 border border-luxury-beige-300/30 flex items-center justify-center mb-6 group-hover:bg-luxury-charcoal-900 group-hover:text-white group-hover:border-luxury-charcoal-900 transition-all duration-500">
+              <i class="fa-solid fa-hourglass-half text-lg"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-luxury-charcoal-900 mb-3">Risau Projek Tergendala</h3>
+            <p class="text-stone-500 text-sm font-light leading-relaxed">
+              Bimbang kontraktor lari bersama duit deposit atau membiarkan rumah terbengkalai tanpa pemantauan pakar.
+            </p>
+          </div>
+          <div class="mt-8 text-[10px] text-luxury-beige-600/80 font-bold uppercase tracking-widest flex items-center gap-2">
+            <span>Cabaran 05</span> <i class="fa-solid fa-triangle-exclamation text-luxury-beige-400"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION SECTION -->
+  <section id="solusi" class="py-24 sm:py-32 bg-luxury-beige-100 relative overflow-hidden">
+    <!-- Decorative subtle gold circle in bg -->
+    <div class="absolute -right-32 top-12 w-96 h-96 rounded-full border border-luxury-beige-300/30 pointer-events-none"></div>
+    <div class="absolute -left-32 bottom-12 w-96 h-96 rounded-full border border-luxury-beige-300/30 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Grid Layout for Header and Summary Info -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 reveal">
+        <div class="lg:col-span-7">
+          <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Penyelesaian Pintar Anda</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+            Kwikezee Renovations Membantu Anda
+          </h2>
+          <p class="text-stone-600 font-light text-base sm:text-lg leading-relaxed">
+            Kami bukan kontraktor yang membina. Kami adalah <strong class="font-medium text-luxury-charcoal-900">Perunding & Pengurus Projek bebas anda</strong>. Kami melindungi kepentingan dan belanjawan anda dengan menghubungkan anda dengan kontraktor panel terbaik serta memastikan projek anda diurus secara profesional.
+          </p>
+        </div>
+        <div class="lg:col-span-5 bg-white border border-luxury-beige-200 p-8 shadow-luxury">
+          <h4 class="font-serif text-xl font-medium text-luxury-charcoal-900 mb-4">Mengapa Menggunakan Perunding?</h4>
+          <ul class="space-y-3.5 text-sm text-stone-600 font-light">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-luxury-beige-500 mt-1"></i>
+              <span><strong>Kepentingan Anda Utama:</strong> Kami tidak mengambil untung atas kos pembinaan bahan, kami bebas menilai kontraktor secara adil.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-luxury-beige-500 mt-1"></i>
+              <span><strong>Penjimatan Kos:</strong> Membantu anda menapis sebut harga yang 'digelembungkan' secara tidak sengaja.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-luxury-beige-500 mt-1"></i>
+              <span><strong>Perlindungan Kontrak:</strong> Menyediakan kontrak yang adil untuk kedua-dua pihak.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Solutions Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Solution 1 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:-translate-y-1 transition-all duration-500 shadow-luxury reveal delay-100">
+          <div class="w-14 h-14 bg-luxury-beige-100 text-luxury-beige-600 flex items-center justify-center rounded-none mb-6">
+            <i class="fa-solid fa-handshake-angle text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-luxury-charcoal-900 mb-4">Padanan Kontraktor Panel</h3>
+          <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">
+            Kami memadankan rumah anda dengan kontraktor panel berdaftar yang telah melalui proses saringan latar belakang, prestasi kerja lampau dan kestabilan kewangan.
+          </p>
+          <div class="h-[1px] bg-luxury-beige-200 w-full mb-4"></div>
+          <span class="text-xs uppercase tracking-widest text-luxury-beige-500 font-semibold">Tapis & Padan Berprestasi Tinggi</span>
+        </div>
+
+        <!-- Solution 2 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:-translate-y-1 transition-all duration-500 shadow-luxury reveal delay-200">
+          <div class="w-14 h-14 bg-luxury-beige-100 text-luxury-beige-600 flex items-center justify-center rounded-none mb-6">
+            <i class="fa-solid fa-code-compare text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-luxury-charcoal-900 mb-4">Perbandingan Sebut Harga</h3>
+          <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">
+            Dapatkan beberapa sebut harga (quotation) yang tersusun dalam satu format standard yang mudah difahami. Anda nampak jelas ke mana setiap sen dibelanjakan.
+          </p>
+          <div class="h-[1px] bg-luxury-beige-200 w-full mb-4"></div>
+          <span class="text-xs uppercase tracking-widest text-luxury-beige-500 font-semibold">Tiada Caj Tersembunyi</span>
+        </div>
+
+        <!-- Solution 3 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:-translate-y-1 transition-all duration-500 shadow-luxury reveal delay-300">
+          <div class="w-14 h-14 bg-luxury-beige-100 text-luxury-beige-600 flex items-center justify-center rounded-none mb-6">
+            <i class="fa-solid fa-comments text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-luxury-charcoal-900 mb-4">Konsultasi Projek Profesional</h3>
+          <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">
+            Sebelum mula, berbincanglah dengan pakar perunding kami berkenaan perancangan ruang, pemilihan bahan, dan bajet yang ideal agar anda tidak tersilap langkah.
+          </p>
+          <div class="h-[1px] bg-luxury-beige-200 w-full mb-4"></div>
+          <span class="text-xs uppercase tracking-widest text-luxury-beige-500 font-semibold">Nasihat Reka Bentuk & Bahan</span>
+        </div>
+
+        <!-- Solution 4 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:-translate-y-1 transition-all duration-500 shadow-luxury reveal delay-100">
+          <div class="w-14 h-14 bg-luxury-beige-100 text-luxury-beige-600 flex items-center justify-center rounded-none mb-6">
+            <i class="fa-solid fa-compass-drafting text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-luxury-charcoal-900 mb-4">Perancangan Renovasi</h3>
+          <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">
+            Menyusun jadual kerja (Gantt Chart) yang realistik dan tersusun supaya anda tahu bila masanya kerja-kerja kritikal seperti paip, plaster siling atau kabinet akan disiapkan.
+          </p>
+          <div class="h-[1px] bg-luxury-beige-200 w-full mb-4"></div>
+          <span class="text-xs uppercase tracking-widest text-luxury-beige-500 font-semibold">Pengurusan Garis Masa Sistematik</span>
+        </div>
+
+        <!-- Solution 5 -->
+        <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 hover:-translate-y-1 transition-all duration-500 shadow-luxury reveal delay-200">
+          <div class="w-14 h-14 bg-luxury-beige-100 text-luxury-beige-600 flex items-center justify-center rounded-none mb-6">
+            <i class="fa-solid fa-chart-line text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-luxury-charcoal-900 mb-4">Pemantauan Projek (Monitoring)</h3>
+          <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">
+            Wakil pengurus projek kami akan melawat tapak secara berkala dan menghantar laporan bergambar/video perkembangan projek terus kepada telefon anda.
+          </p>
+          <div class="h-[1px] bg-luxury-beige-200 w-full mb-4"></div>
+          <span class="text-xs uppercase tracking-widest text-luxury-beige-500 font-semibold">Laporan Terus Ke WhatsApp Anda</span>
+        </div>
+
+        <!-- Call to action inside solution section -->
+        <div class="bg-luxury-charcoal-900 p-8 flex flex-col justify-between border border-luxury-charcoal-900 text-luxury-beige-100 relative group reveal delay-300">
+          <div>
+            <h3 class="font-serif text-2xl font-medium mb-4 text-white">Hubungi Perunding Hari Ini</h3>
+            <p class="text-stone-400 text-sm font-light leading-relaxed mb-8">
+              Bincangkan rancangan renovasi anda bersama kami tanpa sebarang komitmen kewangan awal.
+            </p>
+          </div>
+          <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." target="_blank" class="w-full py-4 bg-luxury-beige-400 hover:bg-luxury-beige-300 text-luxury-charcoal-900 font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 transition-all duration-300">
+            <span>Mulakan Konsultasi</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BEFORE & AFTER SLIDER -->
+  <section id="before-after" class="py-24 sm:py-32 bg-luxury-beige-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Hasil Pembuktian Kerja Kami</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+          Sebelum & Selepas Renovasi
+        </h2>
+        <p class="text-stone-600 font-light text-base sm:text-lg">
+          Gelongsor pemegang bar di tengah gambar ke kiri atau kanan untuk membandingkan transformasi ruang yang diuruskan oleh Kwikezee.
+        </p>
+      </div>
+
+      <!-- Before/After Interactive Comparison Frame -->
+      <div class="reveal">
+        <div 
+          x-data="{ sliderPos: 50 }" 
+          class="relative w-full max-w-4xl mx-auto aspect-[16/10] sm:aspect-[16/9] overflow-hidden shadow-luxury border border-luxury-beige-200/50 select-none group"
+        >
+          <!-- AFTER (Background Image) -->
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="After luxury renovated room" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+          <div class="absolute right-4 bottom-4 bg-luxury-charcoal-950/80 text-luxury-beige-100 text-[10px] sm:text-xs uppercase tracking-widest font-bold px-3 py-1.5 backdrop-blur-md border border-white/10 z-10">
+            Selepas (After)
+          </div>
+          
+          <!-- BEFORE (Foreground Image clipped dynamically) -->
+          <div 
+            class="absolute inset-0 pointer-events-none overflow-hidden" 
+            :style="'clip-path: inset(0 ' + (100 - sliderPos) + '% 0 0)'"
+          >
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Before outdated room" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+            <div class="absolute left-4 bottom-4 bg-luxury-beige-900/95 text-white text-[10px] sm:text-xs uppercase tracking-widest font-bold px-3 py-1.5 backdrop-blur-md border border-white/10">
+              Sebelum (Before)
+            </div>
+          </div>
+
+          <!-- Vertical Slider Bar / Handle -->
+          <div 
+            class="absolute inset-y-0 w-[2px] bg-white cursor-ew-resize z-30" 
+            :style="'left: ' + sliderPos + '%'"
+          >
+            <!-- Circular handle button -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white text-luxury-charcoal-900 shadow-2xl border border-luxury-beige-300 flex items-center justify-center text-xs transition-transform group-hover:scale-110">
+              <i class="fa-solid fa-arrows-left-right text-luxury-beige-600"></i>
+            </div>
+          </div>
+
+          <!-- HTML Range Input to capture touch/mouse moves -->
+          <input 
+            type="range" 
+            min="0" 
+            max="100" 
+            x-model="sliderPos" 
+            class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40"
+          >
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS SECTION (TIMELINE) -->
+  <section id="how-it-works" class="py-24 sm:py-32 bg-luxury-beige-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-20 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Proses Selamat & Telus</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+          Bagaimana Kwikezee Menguruskan Projek Anda
+        </h2>
+        <p class="text-stone-600 font-light text-base sm:text-lg">
+          Langkah demi langkah yang dirancang untuk mengurangkan risiko renovasi dan memastikan kepuasan maksimum anda dari mula hingga serah kunci.
+        </p>
+      </div>
+
+      <!-- Modern Timeline Design -->
+      <div class="relative max-w-5xl mx-auto">
+        <!-- Vertical Timeline Line for Desktop -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-full bg-luxury-beige-300/60 hidden md:block z-0"></div>
+        
+        <div class="space-y-12 md:space-y-20 relative z-10">
+          
+          <!-- Step 1 -->
+          <div class="flex flex-col md:flex-row items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] md:text-right pr-0 md:pr-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 01</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Hubungi Kami</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Hubungi kami melalui WhatsApp atau borang konsultasi. Kongsi keperluan renovasi, jenis rumah, dan anggaran bajet kasar anda.
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-charcoal-900 border-4 border-luxury-beige-100 flex items-center justify-center text-luxury-beige-400 font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              1
+            </div>
+            <div class="w-full md:w-[45%] pl-0 md:pl-10 hidden md:block"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex flex-col md:flex-row-reverse items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] text-left pl-0 md:pl-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 02</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Konsultasi Percuma</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Berbincang dengan perunding kami. Kami akan bantu anda memperincikan skop kerja untuk mengelakkan perbelanjaan yang tidak perlu.
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-beige-400 border-4 border-luxury-beige-100 flex items-center justify-center text-white font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              2
+            </div>
+            <div class="w-full md:w-[45%] pr-0 md:pr-10 hidden md:block"></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex flex-col md:flex-row items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] md:text-right pr-0 md:pr-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 03</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Padanan Dengan Kontraktor Panel</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Kami mencalonkan sehingga 3 kontraktor panel terbaik daripada rangkaian kami yang paling sesuai dengan profil projek dan bajet anda.
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-charcoal-900 border-4 border-luxury-beige-100 flex items-center justify-center text-luxury-beige-400 font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              3
+            </div>
+            <div class="w-full md:w-[45%] pl-0 md:pl-10 hidden md:block"></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex flex-col md:flex-row-reverse items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] text-left pl-0 md:pl-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 04</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Terima Sebut Harga (Quotation)</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Bandingkan sebut harga yang distandardkan dengan bantuan analisis kami. Anda boleh membuat keputusan berdasarkan harga dan rekod prestasi kerja.
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-beige-400 border-4 border-luxury-beige-100 flex items-center justify-center text-white font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              4
+            </div>
+            <div class="w-full md:w-[45%] pr-0 md:pr-10 hidden md:block"></div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flex flex-col md:flex-row items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] md:text-right pr-0 md:pr-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 05</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Mulakan Projek</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Selepas persetujuan kontrak yang adil, kontraktor memulakan kerja fizikal di tapak di bawah garis panduan keselamatan dan kualiti.
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-charcoal-900 border-4 border-luxury-beige-100 flex items-center justify-center text-luxury-beige-400 font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              5
+            </div>
+            <div class="w-full md:w-[45%] pl-0 md:pl-10 hidden md:block"></div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="flex flex-col md:flex-row-reverse items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] text-left pl-0 md:pl-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 06</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Pemantauan Projek Profesional</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Kami melawat tapak kerja secara berkala untuk menyemak kualiti bahan & kemajuan kerja. Laporan dikongsi terus kepada anda secara telus.
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-beige-400 border-4 border-luxury-beige-100 flex items-center justify-center text-white font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              6
+            </div>
+            <div class="w-full md:w-[45%] pr-0 md:pr-10 hidden md:block"></div>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="flex flex-col md:flex-row items-center md:justify-between group reveal">
+            <div class="w-full md:w-[45%] md:text-right pr-0 md:pr-10 mb-4 md:mb-0">
+              <span class="inline-block text-xs uppercase tracking-widest text-luxury-beige-500 font-bold mb-1">Langkah 07</span>
+              <h3 class="font-serif text-xl font-bold text-luxury-charcoal-900 mb-2">Projek Siap & Serah Kunci</h3>
+              <p class="text-stone-500 text-sm font-light leading-relaxed">
+                Pemeriksaan akhir (defect check list) dilakukan bersama perunding kami sebelum baki bayaran diserahkan kepada kontraktor. Selamat masuk rumah baru!
+              </p>
+            </div>
+            <!-- Node -->
+            <div class="w-12 h-12 rounded-full bg-luxury-charcoal-900 border-4 border-luxury-beige-100 flex items-center justify-center text-luxury-beige-400 font-bold text-sm z-10 transition-transform group-hover:scale-110 shadow-lg">
+              7
+            </div>
+            <div class="w-full md:w-[45%] pl-0 md:pl-10 hidden md:block"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES WE MANAGE -->
+  <section id="perkhidmatan" class="py-24 sm:py-32 bg-luxury-beige-100 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Perkhidmatan Kami Uruskan</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+          Kategori Renovasi Yang Kami Kawal Selia
+        </h2>
+        <p class="text-stone-600 font-light text-base sm:text-lg">
+          Kami memantau kualiti dan perincian kerja untuk pelbagai aspek pembinaan dan reka bentuk dalaman rumah anda.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        
+        <!-- Kitchen Cabinet -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-100">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-kitchen-set text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Kitchen Cabinet</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Pemasangan kabinet dapur moden, singki, table top kuarza, konkrit, dan susunan peralatan dapur yang ergonomik.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 01</span>
+        </div>
+
+        <!-- Wardrobe -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-200">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-door-closed text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Wardrobe</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Walk-in closet, almari pakaian jenis terbina dalam (built-in) dengan pembahagi laci tersuai dan kemasan mewah.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 02</span>
+        </div>
+
+        <!-- House Extension -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-300">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-trowel-bricks text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">House Extension</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Penyambungan struktur bahagian belakang (dapur basah) atau tepi rumah untuk membesarkan ruang tamu dan bilik.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 03</span>
+        </div>
+
+        <!-- Plaster Ceiling -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-400">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-border-all text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Plaster Ceiling</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Pemasangan siling plaster rata, bertingkat (L-box), kemasan lampu jenis tersembunyi (cove light) untuk suasana eksklusif.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 04</span>
+        </div>
+
+        <!-- Tiling Works -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-500">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-shapes text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Tiling Works</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Kerja pemasangan jubin (tiles) lantai bersaiz besar, mozek bilik air, kemasan dinding dengan susunan yang kemas dan sekata.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 05</span>
+        </div>
+
+        <!-- Plumbing -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-100">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-faucet-drip text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Plumbing</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Pemasangan sistem paip baharu, penapis air, tangki air simpanan, pemasangan tandas, sinki dan sistem pembuangan air kotor.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 06</span>
+        </div>
+
+        <!-- Electrical Wiring -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-200">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-bolt text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Electrical Wiring</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Pendawaian semula (rewiring), pemasangan kotak fius (DB), penambahan plug point, point penghawa dingin, dan lampu dekoratif.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 07</span>
+        </div>
+
+        <!-- Full House Renovation -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-300">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-house-chimney text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Full House Renovation</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Ubah suai menyeluruh untuk rumah sub-sale lama agar kelihatan moden, segar, dan sesuai untuk keperluan keluarga baharu.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 08</span>
+        </div>
+
+        <!-- Awning & Roofing -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-400">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-umbrella text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Awning & Roofing</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Pemasangan awning aluminium composite panel (ACP), kaca atau polikarbonat untuk kawasan garaj kereta dan balkoni.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 09</span>
+        </div>
+
+        <!-- Interior Renovation -->
+        <div class="bg-white border border-luxury-beige-200 p-6 shadow-luxury hover:border-luxury-beige-400 hover:shadow-luxury-hover transition-all duration-500 flex flex-col justify-between group reveal delay-500">
+          <div>
+            <div class="w-10 h-10 bg-luxury-beige-100 text-luxury-charcoal-900 flex items-center justify-center mb-5 group-hover:bg-luxury-beige-400 group-hover:text-white transition-all duration-300">
+              <i class="fa-solid fa-couch text-lg"></i>
+            </div>
+            <h3 class="font-serif text-base font-bold text-luxury-charcoal-900 mb-2">Interior Renovation</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Hiasan dalaman lengkap termasuk pemasangan wainscoting, kemasan dinding kertas hiasan, cat dinding premium, dan pencahayaan.
+            </p>
+          </div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-luxury-beige-500 mt-6 block">Kategori 10</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-24 sm:py-32 bg-luxury-beige-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <!-- Left Side Text and Badge -->
+        <div class="lg:col-span-5 reveal">
+          <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Kelebihan Platform Kami</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+            Kenapa Pemilik Rumah Memilih Kwikezee?
+          </h2>
+          <p class="text-stone-600 font-light leading-relaxed mb-8">
+            Kami bertindak sebagai perisai pelindung wang dan masa anda. Melalui sistem padanan dan pengurusan pintar kami, kami memastikan tiada eksploitasi berlaku sepanjang projek renovasi anda berjalan.
+          </p>
+          
+          <div class="p-6 bg-luxury-beige-100 border-l-4 border-luxury-beige-400">
+            <h4 class="font-serif font-bold text-luxury-charcoal-900 mb-2">Jaminan Kwikezee</h4>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              "Kami memastikan anda bekerjasama dengan profesional yang bertanggungjawab, menapis sebut harga untuk nilai terbaik, dan memantau kemajuan tapak tanpa anda perlu hadir setiap hari."
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side Cards Grid -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 shadow-luxury hover:border-luxury-beige-400/60 transition-all duration-500 reveal delay-100">
+            <div class="text-luxury-beige-400 text-3xl mb-4">
+              <i class="fa-solid fa-users-viewfinder"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-luxury-charcoal-900 mb-2">Rangkaian Kontraktor Dipercayai</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Hanya kontraktor panel yang telah melepasi tapisan kualiti, pendaftaran SSM rasmi, dan tinjauan hasil kerja lampau sahaja dibenarkan membida projek anda.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 shadow-luxury hover:border-luxury-beige-400/60 transition-all duration-500 reveal delay-200">
+            <div class="text-luxury-beige-400 text-3xl mb-4">
+              <i class="fa-solid fa-tags"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-luxury-charcoal-900 mb-2">Harga Kompetitif & Telus</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Dengan perbandingan sebut harga secara bersebelahan (side-by-side) dan standard, anda boleh memilih tawaran terbaik tanpa ragu-ragu.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 shadow-luxury hover:border-luxury-beige-400/60 transition-all duration-500 reveal delay-300">
+            <div class="text-luxury-beige-400 text-3xl mb-4">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-luxury-charcoal-900 mb-2">Proses Kerja Telus</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Semua langkah dari pembayaran berperingkat, tuntutan perubahan skop (variation orders), dan pelantikan didokumentasikan dengan jelas.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 shadow-luxury hover:border-luxury-beige-400/60 transition-all duration-500 reveal delay-400">
+            <div class="text-luxury-beige-400 text-3xl mb-4">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-luxury-charcoal-900 mb-2">Sokongan Konsultasi Berterusan</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Pasukan khidmat pelanggan dan penasihat teknikal kami sentiasa bersedia menjawab soalan anda dan bertindak sebagai pengadil sekiranya timbul perselisihan faham.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 shadow-luxury hover:border-luxury-beige-400/60 transition-all duration-500 reveal delay-100">
+            <div class="text-luxury-beige-400 text-3xl mb-4">
+              <i class="fa-solid fa-binoculars"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-luxury-charcoal-900 mb-2">Pemantauan Projek Profesional</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Kami memeriksa tapak bagi pihak anda untuk memastikan bahan dan pemasangan menepati standard industri pembinaan Malaysia.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white/60 backdrop-blur-md p-8 border border-white/60 shadow-luxury hover:border-luxury-beige-400/60 transition-all duration-500 reveal delay-200">
+            <div class="text-luxury-beige-400 text-3xl mb-4">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-luxury-charcoal-900 mb-2">Khidmat Bantuan Lepas Jualan</h3>
+            <p class="text-stone-500 text-xs font-light leading-relaxed">
+              Bantuan susulan sekiranya berlaku kecacatan (defect) dalam tempoh jaminan selepas projek siap diserahkan kepada anda.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS SECTION (ANIMATED ON SCROLL) -->
+  <section id="statistics-section" class="py-20 bg-luxury-charcoal-900 text-luxury-beige-100 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80" alt="Kitchen backdrop" class="w-full h-full object-cover">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        
+        <div class="p-4 border-r border-white/10 last:border-0">
+          <p class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-luxury-beige-400 mb-2 stat-counter" data-target="15">0</p>
+          <p class="text-xs sm:text-sm uppercase tracking-widest text-stone-400 font-medium">Panel Kontraktor</p>
+        </div>
+
+        <div class="p-4 border-r border-white/10 last:border-0">
+          <p class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-luxury-beige-400 mb-2 stat-counter" data-target="100">0</p>
+          <p class="text-xs sm:text-sm uppercase tracking-widest text-stone-400 font-medium">Projek Siap</p>
+        </div>
+
+        <div class="p-4 border-r border-white/10 last:border-0">
+          <p class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-luxury-beige-400 mb-2 stat-counter" data-target="10">0</p>
+          <p class="text-xs sm:text-sm uppercase tracking-widest text-stone-400 font-medium">Kategori Renovasi</p>
+        </div>
+
+        <div class="p-4 last:border-0">
+          <p class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-luxury-beige-400 mb-2 stat-counter" data-target="5">0</p>
+          <p class="text-xs sm:text-sm uppercase tracking-widest text-stone-400 font-medium">Kawasan Liputan</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section 
+    id="portfolio" 
+    class="py-24 sm:py-32 bg-luxury-beige-50"
+    x-data="{ 
+      portfolioItems: [],
+      isLoading: true,
+      init() {
+        const fallbackData = [
+          {
+            'title': 'Kabinet Dapur Minimalis Moden',
+            'category': 'kitchen',
+            'categoryLabel': 'Kitchen Cabinets',
+            'image': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80',
+            'images': [
+              'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+              'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80'
+            ]
+          },
+          {
+            'title': 'Penyambungan Dapur Belakang Semi-D',
+            'category': 'extension',
+            'categoryLabel': 'House Extensions',
+            'image': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+            'images': [
+              'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
+            ]
+          },
+          {
+            'title': 'Walk-in Closet Mewah',
+            'category': 'wardrobe',
+            'categoryLabel': 'Wardrobes',
+            'image': 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80',
+            'images': [
+              'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1200&q=80',
+              'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80'
+            ]
+          },
+          {
+            'title': 'Ruang Tamu Konsep Japandi Warm',
+            'category': 'living',
+            'categoryLabel': 'Living Rooms',
+            'image': 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            'title': 'Siling Plaster L-Box & Lampu Sembunyi',
+            'category': 'ceiling',
+            'categoryLabel': 'Ceiling Works',
+            'image': 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
+          },
+          {
+            'title': 'Dapur Basah Moden Monokrom',
+            'category': 'kitchen',
+            'categoryLabel': 'Kitchen Cabinets',
+            'image': 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80'
+          }
+        ];
+
+        // Jika dibuka terus (double click file://), CORS browser akan block AJAX.
+        // Oleh itu, kita terus guna fallbackData secara automatik.
+        if (window.location.protocol === 'file:') {
+          console.warn('Running locally via file:// protocol. Using embedded fallback data due to CORS restriction.');
+          this.portfolioItems = fallbackData;
+          this.isLoading = false;
+          this.$nextTick(() => {
+            if (window.revealObserver) {
+              const newReveals = document.querySelectorAll('#portfolio .reveal');
+              newReveals.forEach(el => window.revealObserver.observe(el));
+            }
+          });
+          return;
+        }
+
+        // Pautan ini boleh ditukar ke pautan terus R2 anda nanti:
+        // Cth: fetch('https://cdn.kwikezeerenovations.com/portfolio.json')
+        fetch('portfolio.json')
+          .then(res => res.json())
+          .then(data => {
+            this.portfolioItems = data;
+            this.isLoading = false;
+            
+            this.$nextTick(() => {
+              if (window.revealObserver) {
+                const newReveals = document.querySelectorAll('#portfolio .reveal');
+                newReveals.forEach(el => window.revealObserver.observe(el));
+              }
+            });
+          })
+          .catch(err => {
+            console.error('Error loading portfolio.json, using fallback:', err);
+            this.portfolioItems = fallbackData;
+            this.isLoading = false;
+            this.$nextTick(() => {
+              if (window.revealObserver) {
+                const newReveals = document.querySelectorAll('#portfolio .reveal');
+                newReveals.forEach(el => window.revealObserver.observe(el));
+              }
+            });
+          });
+      }
+    }"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Galeri Hasil Kerja</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-6">
+          Inspirasi & Reka Bentuk Terkini
+        </h2>
+        <p class="text-stone-600 font-light text-base sm:text-lg">
+          Terokai portfolio projek sebenar yang dipantau rapat oleh Kwikezee Renovations di bawah kawal selia kontraktor panel bertauliah kami.
+        </p>
+      </div>
+
+      <!-- Portfolio Filters -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12 reveal">
+        <button 
+          @click="portfolioFilter = 'all'" 
+          :class="portfolioFilter === 'all' ? 'bg-luxury-charcoal-900 text-luxury-beige-100' : 'bg-white text-luxury-charcoal-900 border border-luxury-beige-200 hover:border-luxury-beige-400'"
+          class="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-sm"
+        >
+          Semua Projek
+        </button>
+        <button 
+          @click="portfolioFilter = 'kitchen'" 
+          :class="portfolioFilter === 'kitchen' ? 'bg-luxury-charcoal-900 text-luxury-beige-100' : 'bg-white text-luxury-charcoal-900 border border-luxury-beige-200 hover:border-luxury-beige-400'"
+          class="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-sm"
+        >
+          Kitchen Cabinets
+        </button>
+        <button 
+          @click="portfolioFilter = 'extension'" 
+          :class="portfolioFilter === 'extension' ? 'bg-luxury-charcoal-900 text-luxury-beige-100' : 'bg-white text-luxury-charcoal-900 border border-luxury-beige-200 hover:border-luxury-beige-400'"
+          class="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-sm"
+        >
+          House Extensions
+        </button>
+        <button 
+          @click="portfolioFilter = 'wardrobe'" 
+          :class="portfolioFilter === 'wardrobe' ? 'bg-luxury-charcoal-900 text-luxury-beige-100' : 'bg-white text-luxury-charcoal-900 border border-luxury-beige-200 hover:border-luxury-beige-400'"
+          class="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-sm"
+        >
+          Wardrobes
+        </button>
+        <button 
+          @click="portfolioFilter = 'living'" 
+          :class="portfolioFilter === 'living' ? 'bg-luxury-charcoal-900 text-luxury-beige-100' : 'bg-white text-luxury-charcoal-900 border border-luxury-beige-200 hover:border-luxury-beige-400'"
+          class="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-sm"
+        >
+          Living Rooms
+        </button>
+        <button 
+          @click="portfolioFilter = 'ceiling'" 
+          :class="portfolioFilter === 'ceiling' ? 'bg-luxury-charcoal-900 text-luxury-beige-100' : 'bg-white text-luxury-charcoal-900 border border-luxury-beige-200 hover:border-luxury-beige-400'"
+          class="px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-none shadow-sm"
+        >
+          Ceiling Works
+        </button>
+      </div>
+
+      <!-- Loading State (Shimmer Skeleton) -->
+      <div x-show="isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="i in 6" :key="i">
+          <div class="animate-pulse bg-luxury-beige-200/50 border border-luxury-beige-300/30 aspect-video sm:aspect-square md:aspect-[4/3] flex flex-col justify-end p-8">
+            <div class="h-2 bg-luxury-beige-300/60 w-20 mb-3"></div>
+            <div class="h-4 bg-luxury-beige-300/60 w-36"></div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Masonry Grid with Live Lightbox links (Dinamik daripada portfolio.json) -->
+      <div x-show="!isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-cloak>
+        <template x-for="(item, index) in portfolioItems" :key="index">
+          <div 
+            x-show="portfolioFilter === 'all' || portfolioFilter === item.category"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            class="group relative overflow-hidden bg-white border border-luxury-beige-200 shadow-luxury aspect-video sm:aspect-square md:aspect-[4/3] cursor-pointer reveal"
+            :class="'delay-' + ((index % 3) + 1) * 100"
+            @click="openLightbox(item.images || [item.image], item.title, item.categoryLabel)"
+          >
+            <img :src="item.image" :alt="item.title" class="w-full h-full object-cover transform group-hover:scale-105 group-hover:blur-[1px] transition-all duration-700 pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-luxury-charcoal-950/80 via-luxury-charcoal-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-[10px] uppercase tracking-widest text-luxury-beige-400 font-bold mb-1 translate-y-2 group-hover:translate-y-0 transition-transform duration-500" x-text="item.categoryLabel"></span>
+              <h4 class="font-serif text-lg font-medium text-white translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-[50ms]" x-text="item.title"></h4>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO LIGHTBOX MODAL -->
+    <div 
+      x-show="lightboxOpen" 
+      class="fixed inset-0 z-[100] flex items-center justify-center bg-luxury-charcoal-950/90 backdrop-blur-md px-4 sm:px-6"
+      x-cloak
+      @keydown.escape.window="closeLightbox()"
+    >
+      <div 
+        @click.away="closeLightbox()" 
+        class="bg-white max-w-4xl w-full relative shadow-2xl flex flex-col md:flex-row max-h-[90vh] overflow-y-auto"
+      >
+        <!-- Close Button -->
+        <button 
+          @click="closeLightbox()" 
+          class="absolute top-4 right-4 z-10 w-10 h-10 bg-luxury-charcoal-900 text-white flex items-center justify-center rounded-none hover:bg-luxury-beige-400 hover:text-luxury-charcoal-900 transition-all"
+        >
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <!-- Image Container (With Slideshow Controls) -->
+        <div class="w-full md:w-2/3 bg-luxury-charcoal-950 flex items-center justify-center relative min-h-[50vh] md:min-h-[75vh]">
+          <!-- Active Image -->
+          <img :src="lightboxImages[lightboxActiveIndex]" :alt="lightboxTitle" class="max-h-[50vh] md:max-h-[75vh] w-full object-contain pointer-events-none">
+
+          <!-- Left Navigation Control -->
+          <button 
+            x-show="lightboxImages.length > 1"
+            @click="lightboxActiveIndex = (lightboxActiveIndex - 1 + lightboxImages.length) % lightboxImages.length" 
+            class="absolute left-4 w-10 h-10 rounded-full bg-black/40 hover:bg-luxury-beige-400 text-white hover:text-luxury-charcoal-900 flex items-center justify-center transition-all z-20 focus:outline-none"
+            aria-label="Previous image"
+          >
+            <i class="fa-solid fa-chevron-left text-sm"></i>
+          </button>
+
+          <!-- Right Navigation Control -->
+          <button 
+            x-show="lightboxImages.length > 1"
+            @click="lightboxActiveIndex = (lightboxActiveIndex + 1) % lightboxImages.length" 
+            class="absolute right-4 w-10 h-10 rounded-full bg-black/40 hover:bg-luxury-beige-400 text-white hover:text-luxury-charcoal-900 flex items-center justify-center transition-all z-20 focus:outline-none"
+            aria-label="Next image"
+          >
+            <i class="fa-solid fa-chevron-right text-sm"></i>
+          </button>
+
+          <!-- Dots Indicators -->
+          <div x-show="lightboxImages.length > 1" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1.5 z-20">
+            <template x-for="(img, idx) in lightboxImages" :key="idx">
+              <button 
+                @click="lightboxActiveIndex = idx" 
+                class="w-2 h-2 rounded-full border border-white/60 transition-all duration-300"
+                :class="lightboxActiveIndex === idx ? 'bg-luxury-beige-400 w-4 border-luxury-beige-400' : 'bg-black/30'"
+              ></button>
+            </template>
+          </div>
+        </div>
+
+        <!-- Info / Inquiry Panel -->
+        <div class="w-full md:w-1/3 p-8 flex flex-col justify-between bg-luxury-beige-50">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-luxury-beige-500" x-text="lightboxCategory">Kategori</span>
+            <h3 class="font-serif text-2xl font-semibold text-luxury-charcoal-900 mt-2 mb-4" x-text="lightboxTitle">Tajuk Projek</h3>
+            <p class="text-stone-500 text-sm font-light leading-relaxed mb-6">
+              Reka bentuk ini disesuaikan sepenuhnya mengikut ruang dan kehendak pemilik. Kami boleh memadankan anda dengan kontraktor panel kami yang mempunyai kepakaran spesifik untuk membina rekaan seperti ini.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-luxury-beige-200">
+            <p class="text-xs text-stone-400 mb-3">Berminat dengan konsep ini?</p>
+            <a 
+              :href="'https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20dengan%20projek%20' + encodeURIComponent(lightboxTitle) + '%20dalam%20galeri%20anda.'" 
+              target="_blank" 
+              class="w-full py-3 bg-whatsapp-green hover:bg-emerald-500 text-white font-bold tracking-wide text-xs uppercase flex items-center justify-center gap-2 transition-colors"
+            >
+              <i class="fab fa-whatsapp text-lg"></i> Tanya Tentang Konsep Ini
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION (AUTOPLAY CAROUSEL) -->
+  <section class="py-24 sm:py-32 bg-luxury-beige-100 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Testimoni Pemilik Rumah</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-luxury-charcoal-900 mt-2 mb-4">
+          Apa Kata Pelanggan Kami
+        </h2>
+        <p class="text-stone-600 font-light text-sm sm:text-base">
+          Pengalaman sebenar daripada pemilik rumah di Malaysia yang telah berjaya merenovasi kediaman mereka dengan selamat bersama Kwikezee.
+        </p>
+      </div>
+
+      <!-- Testimonial Slider Wrapper -->
+      <div 
+        x-data="{ 
+          active: 0, 
+          interval: null, 
+          testimonials: [
+            { 
+              stars: 5,
+              text: 'Before this, I was so afraid of renovating my kitchen because of runaway contractors. But with Kwikezee, everything was handled cleanly. The quotation was transparent, and on-site progress was sent directly to my WhatsApp. Delighted!',
+              author: 'Azman & Aishah',
+              location: 'Teres 2 Tingkat, Bangi',
+              initials: 'AA'
+            },
+            {
+              stars: 5,
+              text: 'The quotation breakdown analysis given by Kwikezee was extremely detailed and easily comparable. No hidden fees emerged mid-project. Thank you, Kwikezee, for closely auditing the plaster ceiling quality and wiring installation.',
+              author: 'Dr. Sarah',
+              location: 'Kondominium, Putrajaya',
+              initials: 'DS'
+            },
+            {
+              stars: 5,
+              text: 'Extremely helpful for busy working professionals. I did not have to visit the renovation site constantly. The weekly photo/video reports from the Kwikezee project manager were reassuring. Highly recommended!',
+              author: 'Chong Wei',
+              location: 'Semi-D, Kajang',
+              initials: 'CW'
+            }
+          ],
+          startAutoPlay() {
+            this.interval = setInterval(() => {
+              this.active = (this.active + 1) % this.testimonials.length;
+            }, 6000);
+          },
+          stopAutoPlay() {
+            clearInterval(this.interval);
+          }
+        }"
+        x-init="startAutoPlay()"
+        @mouseenter="stopAutoPlay()"
+        @mouseleave="startAutoPlay()"
+        class="relative min-h-[350px] sm:min-h-[280px] bg-white/70 backdrop-blur-md border border-white/60 p-8 sm:p-12 shadow-luxury reveal"
+      >
+        <!-- Quote icon decoration -->
+        <div class="absolute top-6 right-8 text-luxury-beige-200 text-6xl font-serif select-none pointer-events-none">“</div>
+        
+        <!-- Loop testimonials -->
+        <template x-for="(test, index) in testimonials" :key="index">
+          <div 
+            x-show="active === index"
+            x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 translate-x-8"
+            x-transition:enter-end="opacity-100 translate-x-0"
+            x-transition:leave="transition ease-in duration-400 absolute inset-0 p-8 sm:p-12"
+            x-transition:leave-start="opacity-100 translate-x-0"
+            x-transition:leave-end="opacity-0 -translate-x-8"
+            class="flex flex-col justify-between h-full"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-amber-400 text-xs sm:text-sm mb-4">
+                <template x-for="i in test.stars">
+                  <i class="fa-solid fa-star"></i>
+                </template>
+              </div>
+              <p class="text-stone-600 text-sm sm:text-base font-light leading-relaxed italic mb-8" x-text="'&quot;' + test.text + '&quot;'"></p>
+            </div>
+            
+            <div class="flex items-center gap-4 pt-4 border-t border-luxury-beige-200/40">
+              <div class="w-10 h-10 rounded-full bg-luxury-beige-200 flex items-center justify-center font-bold text-luxury-charcoal-900 text-xs uppercase" x-text="test.initials"></div>
+              <div>
+                <h4 class="font-serif text-sm font-bold text-luxury-charcoal-900" x-text="test.author"></h4>
+                <p class="text-[10px] uppercase tracking-wider text-stone-400 font-semibold" x-text="test.location"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Carousel navigation indicators -->
+        <div class="absolute bottom-4 right-8 flex gap-1.5 z-20">
+          <template x-for="(test, index) in testimonials" :key="index">
+            <button 
+              @click="active = index" 
+              class="w-2 h-2 rounded-full transition-all duration-300"
+              :class="active === index ? 'bg-luxury-beige-500 w-5' : 'bg-luxury-beige-200 hover:bg-luxury-beige-300'"
+              :aria-label="'Slide ' + (index + 1)"
+            ></button>
+          </template>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-24 sm:py-32 bg-luxury-beige-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-500">Soalan Lazim</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-luxury-charcoal-900 mt-2 mb-4">
+          Apa Yang Anda Ingin Tahu?
+        </h2>
+        <p class="text-stone-600 font-light text-sm sm:text-base">
+          Mahu penjelasan lebih lanjut tentang cara Kwikezee melindungi hak renovasi anda? Semak jawapan di bawah.
+        </p>
+      </div>
+
+      <!-- Accordion Grid -->
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/60 shadow-sm transition-all duration-300 reveal delay-100">
+          <button 
+            @click="activeFaq = (activeFaq === 1 ? null : 1)" 
+            class="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+          >
+            <span class="font-serif font-bold text-base text-luxury-charcoal-900">Adakah Kwikezee sebuah syarikat kontraktor renovasi?</span>
+            <span class="text-luxury-beige-500 ml-4">
+              <i class="fa-solid" :class="activeFaq === 1 ? 'fa-minus' : 'fa-plus'"></i>
+            </span>
+          </button>
+          <div 
+            x-show="activeFaq === 1" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="max-h-0 opacity-0 overflow-hidden"
+            x-transition:enter-end="max-h-96 opacity-100"
+            class="px-6 pb-6 text-stone-600 font-light text-sm leading-relaxed border-t border-luxury-beige-100 pt-4"
+          >
+            Bukan. Kwikezee Renovations ialah <strong>platform perundingan dan pengurusan projek bebas</strong>. Kami tidak membina sendiri rumah anda. Kami menghubungkan anda dengan kontraktor panel bertauliah, membantu anda membanding sebut harga secara adil, dan bertindak sebagai wakil anda untuk memantau kemajuan serta kualiti kerja di tapak.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/60 shadow-sm transition-all duration-300 reveal delay-200">
+          <button 
+            @click="activeFaq = (activeFaq === 2 ? null : 2)" 
+            class="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+          >
+            <span class="font-serif font-bold text-base text-luxury-charcoal-900">Bagaimana kontraktor panel Kwikezee ditapis?</span>
+            <span class="text-luxury-beige-500 ml-4">
+              <i class="fa-solid" :class="activeFaq === 2 ? 'fa-minus' : 'fa-plus'"></i>
+            </span>
+          </button>
+          <div 
+            x-show="activeFaq === 2" 
+            class="px-6 pb-6 text-stone-600 font-light text-sm leading-relaxed border-t border-luxury-beige-100 pt-4"
+          >
+            Semua kontraktor dalam rangkaian kami melalui tapisan yang ketat. Ini termasuk pemeriksaan rekod SSM, pendaftaran CIDB (sekiranya berkaitan), tinjauan fizikal ke atas hasil projek terdahulu, audit kestabilan kewangan, serta semakan maklum balas daripada pelanggan sebelum ini.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/60 shadow-sm transition-all duration-300 reveal delay-300">
+          <button 
+            @click="activeFaq = (activeFaq === 3 ? null : 3)" 
+            class="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+          >
+            <span class="font-serif font-bold text-base text-luxury-charcoal-900">Adakah konsultasi awal dikenakan bayaran?</span>
+            <span class="text-luxury-beige-500 ml-4">
+              <i class="fa-solid" :class="activeFaq === 3 ? 'fa-minus' : 'fa-plus'"></i>
+            </span>
+          </button>
+          <div 
+            x-show="activeFaq === 3" 
+            class="px-6 pb-6 text-stone-600 font-light text-sm leading-relaxed border-t border-luxury-beige-100 pt-4"
+          >
+            Tidak. Konsultasi awal, padanan kontraktor panel, dan sesi pembentangan perbandingan sebut harga (quotation comparison) adalah <strong>100% percuma</strong> tanpa sebarang komitmen kewangan daripada pihak anda.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/60 shadow-sm transition-all duration-300 reveal delay-400">
+          <button 
+            @click="activeFaq = (activeFaq === 4 ? null : 4)" 
+            class="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+          >
+            <span class="font-serif font-bold text-base text-luxury-charcoal-900">Bagaimanakah sistem pembayaran projek dilakukan?</span>
+            <span class="text-luxury-beige-500 ml-4">
+              <i class="fa-solid" :class="activeFaq === 4 ? 'fa-minus' : 'fa-plus'"></i>
+            </span>
+          </button>
+          <div 
+            x-show="activeFaq === 4" 
+            class="px-6 pb-6 text-stone-600 font-light text-sm leading-relaxed border-t border-luxury-beige-100 pt-4"
+          >
+            Pembayaran dilakukan secara berperingkat berdasarkan kemajuan kerja sebenar di tapak (progressive payment). Kontraktor hanya boleh menuntut bayaran bagi peringkat tersebut selepas pengurus projek Kwikezee mengesahkan kualiti dan peratusan siap kerja di tapak secara bertulis.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-white/70 backdrop-blur-md border border-white/60 shadow-sm transition-all duration-300 reveal delay-500">
+          <button 
+            @click="activeFaq = (activeFaq === 5 ? null : 5)" 
+            class="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+          >
+            <span class="font-serif font-bold text-base text-luxury-charcoal-900">Apakah kawasan liputan Kwikezee Renovations?</span>
+            <span class="text-luxury-beige-500 ml-4">
+              <i class="fa-solid" :class="activeFaq === 5 ? 'fa-minus' : 'fa-plus'"></i>
+            </span>
+          </button>
+          <div 
+            x-show="activeFaq === 5" 
+            class="px-6 pb-6 text-stone-600 font-light text-sm leading-relaxed border-t border-luxury-beige-100 pt-4"
+          >
+            Pada masa ini, kami menguruskan projek di kawasan <strong>Bangi, Kajang, Semenyih, Nilai, Putrajaya, Sepang, Dengkil</strong>, serta beberapa kawasan utama lain di sekitar <strong>Kuala Lumpur dan Selangor</strong>.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA SECTION -->
+  <section class="py-24 sm:py-32 bg-luxury-charcoal-900 text-luxury-beige-100 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80" alt="Modern interior design" class="w-full h-full object-cover">
+    </div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
+      <span class="text-xs uppercase tracking-widest font-bold text-luxury-beige-400 mb-4 inline-block">Mulakan Langkah Pertama Anda</span>
+      <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-white leading-tight mb-6">
+        Ready To Start Your <br class="hidden sm:inline">Renovation Journey?
+      </h2>
+      <p class="text-stone-300 font-light text-base sm:text-lg max-w-xl mx-auto mb-10">
+        Talk to our renovation consultant today. We help you make the right choices for your home.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-whatsapp-green hover:bg-emerald-500 text-white font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl rounded-none group">
+          <i class="fab fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+          <span>Hubungi Konsultan Kami</span>
+        </a>
+      </div>
+      
+      <!-- Safe platform disclaimer -->
+      <p class="text-stone-400 text-xs mt-6 font-light">
+        <i class="fa-solid fa-lock text-luxury-beige-400 mr-1"></i> Data dan rancangan rumah anda dilindungi secara sulit.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-luxury-charcoal-950 text-stone-400 pt-20 pb-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <!-- Logo & Pitch -->
+        <div class="md:col-span-2">
+          <a href="#" class="inline-block mb-6">
+            <span class="font-serif text-2xl font-bold tracking-wide text-white">
+              Kwikezee<span class="text-luxury-beige-400">.</span><span class="text-xs uppercase tracking-widest font-sans font-light block text-luxury-beige-500 mt-[-4px]">Renovations</span>
+            </span>
+          </a>
+          <p class="text-sm font-light leading-relaxed text-stone-500 max-w-sm">
+            Platform perundingan dan pengurusan renovasi kediaman yang telus, selamat, dan bebas pening kepala untuk pemilik kediaman di Malaysia.
+          </p>
+        </div>
+
+        <!-- Service Areas -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-6">Kawasan Liputan</h4>
+          <ul class="space-y-2.5 text-xs font-light text-stone-500">
+            <li>Bangi, Kajang, Semenyih</li>
+            <li>Nilai, Putrajaya, Sepang, Dengkil</li>
+            <li>Kuala Lumpur & Selangor</li>
+          </ul>
+        </div>
+
+        <!-- Contacts & Legal -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-6">Hubungi Kami</h4>
+          <ul class="space-y-3 text-xs font-light text-stone-500">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-luxury-beige-400"></i>
+              <a href="mailto:kwikezeeresources@gmail.com" class="hover:text-white transition-colors">kwikezeeresources@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-luxury-beige-400"></i>
+              <a href="tel:+60108118559" class="hover:text-white transition-colors">+6010 8118 559</a>
+            </li>
+            <li class="pt-4 flex items-center gap-4 text-base">
+              <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div class="h-[1px] bg-white/5 w-full mb-8"></div>
+
+      <!-- Disclaimer & Copyright -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] text-stone-600 font-light">
+        <p>
+          &copy; 2026 Kwikezee Renovations (Kwik Ezee Resources). Hak Cipta Terpelihara.
+        </p>
+        <p class="text-center md:text-right max-w-md">
+          Penafian: Kwikezee Renovations ialah platform pengurusan projek dan perundingan bebas. Reka bentuk dan pembinaan fizikal diserahkan kepada pihak kontraktor panel bebas yang dilantik oleh pemilik kediaman.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- STICKY FLOATING WHATSAPP BUTTON WITH LUXURY PULSE -->
+  <a 
+    href="https://wa.me/60108118559?text=Hi%20Kwikezee%20Renovations,%20saya%20berminat%20untuk%20dapatkan%20konsultasi%20percuma." 
+    target="_blank" 
+    class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-whatsapp-green hover:bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 group"
+    aria-label="Contact WhatsApp"
+  >
+    <!-- Ripple rings -->
+    <span class="absolute inset-0 rounded-full bg-whatsapp-green opacity-40 animate-ping group-hover:duration-500 pointer-events-none"></span>
+    <span class="absolute inset-0 rounded-full bg-whatsapp-green opacity-20 scale-125 animate-pulse pointer-events-none"></span>
+    <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+  </a>
+
+  <!-- Custom Core Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. PRELOADER ANIMATION
+      const preloader = document.getElementById('preloader');
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          preloader.classList.add('opacity-0');
+          setTimeout(() => {
+            preloader.remove();
+          }, 700);
+        }, 600); // Elegant brief load show
+      });
+
+      // 2. PARALLAX EFFECT FOR HERO IMAGE
+      const heroParallax = document.querySelector('.hero-parallax');
+      if (heroParallax) {
+        window.addEventListener('scroll', () => {
+          const scrollPos = window.pageYOffset;
+          // Apply hardware-accelerated translation
+          heroParallax.style.transform = `translate3d(0, ${scrollPos * 0.35}px, 0)`;
+        });
+      }
+
+      // 3. STATS COUNT UP ANIMATION ON SCROLL
+      const statsSection = document.getElementById('statistics-section');
+      const counters = document.querySelectorAll('.stat-counter');
+      
+      if (statsSection && counters.length > 0) {
+        const countUp = (counter) => {
+          const target = +counter.getAttribute('data-target');
+          const duration = 2000; // 2 seconds
+          const startTime = performance.now();
+          
+          const update = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Ease-out-cubic formula for smooth slowdown
+            const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+            const val = Math.floor(easeOutCubic * target);
+            
+            counter.innerText = val + '+';
+            
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              counter.innerText = target + '+';
+            }
+          };
+          requestAnimationFrame(update);
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              counters.forEach(counter => countUp(counter));
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+        
+        statsObserver.observe(statsSection);
+      }
+
+      // 4. SCROLL REVEAL (Intersection Observer)
+      const revealItems = document.querySelectorAll('.reveal');
+      
+      if (revealItems.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-active');
+              revealObserver.unobserve(entry.target); // Reveal only once
+            }
+          });
+        }, {
+          root: null,
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px' // Trigger slightly before element fully enters
+        });
+
+        // Store globally so dynamic elements can be observed after loading
+        window.revealObserver = revealObserver;
+
+        revealItems.forEach(item => revealObserver.observe(item));
+      }
+      
+    });
+  </script>
+</body>
+</html>
